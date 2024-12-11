@@ -3,7 +3,7 @@ import cors from 'cors'
 import { router } from "./blogs/blogs.js";
 import { DB_CONNECT } from "./DB/DBconnect.js";
 import 'dotenv/config'
-// export default app = express()
+const app = express()
 // import blogshandler from './blogs/blogs.js/router'
 // port created 
 // server listen 
