@@ -8,8 +8,10 @@ import Admin from './Pages/Admin/Admin'
 import Registar from './Pages/Registar/Registar'
 import Footer from './Components/Footer/Footer'
 import Dashboard from './Pages/Admin/Admin'
+import About from './Pages/AboutUs/About'
 
 const App = () => {
+  
   // const Blogshandler = async () => {
   //   let blogs = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`)
   //   blogs = await blogs.json()
@@ -26,6 +28,8 @@ const App = () => {
     <Route path='/auth/login' element={<Login/>}></Route>
     <Route path='/auth/signup' element={<Registar/>}></Route>
     <Route path='/admin' element={<Dashboard/>}></Route>
+    <Route path='/Aboutus' element={<About/>}></Route>
+    <Route path='/Feautures' element={<Features/>}></Route>
     <Route element={
       <>
       <Navbar/>
