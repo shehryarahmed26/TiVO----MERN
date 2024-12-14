@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer'
 import Dashboard from './Pages/Admin/Admin'
 
 const App = () => {
+  
   // const Blogshandler = async () => {
   //   let blogs = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`)
   //   blogs = await blogs.json()
