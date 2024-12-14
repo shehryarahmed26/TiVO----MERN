@@ -8,6 +8,7 @@ import Admin from './Pages/Admin/Admin'
 import Registar from './Pages/Registar/Registar'
 import Footer from './Components/Footer/Footer'
 import Dashboard from './Pages/Admin/Admin'
+import About from './AboutUs/About'
 
 const App = () => {
   
@@ -27,6 +28,7 @@ const App = () => {
     <Route path='/auth/login' element={<Login/>}></Route>
     <Route path='/auth/signup' element={<Registar/>}></Route>
     <Route path='/admin' element={<Dashboard/>}></Route>
+    <Route path='/Aboutus' element={<About/>}></Route>
     <Route element={
       <>
       <Navbar/>
