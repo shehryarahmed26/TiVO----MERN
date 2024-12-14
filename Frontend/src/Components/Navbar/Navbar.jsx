@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Authcontext } from '../../context/authcontext'
 
 const Navbar = () => {
+  const  {user} = useContext(Authcontext)
+  console.log('usecontext done', user);
+  
   return (
     <nav className='flex px-10 justify-between items-center py-4 '>
       <div className="right flex items-center gap-10">

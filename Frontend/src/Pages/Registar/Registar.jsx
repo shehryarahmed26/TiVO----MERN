@@ -6,18 +6,18 @@ const Registar = () => {
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
   const [userimg, setuserimg] = useState('')
-  const handlerform =  ()  => { 
+  const [loader, setloader] = useState(false)
+  const handlerform =  async ()  => { 
     
-      setTimeout(() => {
-        const userobj =  {
-          username,
-          email,
-          password,
-          userimg
-        }
-      console.log(userobj);
-         
-      }, 5000);
+    const userobj =  {
+      username,
+      email,
+      password,
+      userimg
+    }
+    // const adduser = await fetch(``)
+
+  // console.log(userobj);
     
     // console.log('userobject>>', userobj);
     
@@ -29,6 +29,7 @@ const Registar = () => {
     data.append("file", file)
     data.append("upload_preset", "Blogsapp" )
     data.append("api_key", "689265731956763" )
+    setloader(true)
     let upload = await fetch(`https://api.cloudinary.com/v1_1/dt3ekhfch/upload`,{
       method: 'POST',
       body: data
@@ -40,6 +41,7 @@ const Registar = () => {
     } 
     
     console.log(upload);
+    setloader(false)
 
      
     
@@ -48,6 +50,8 @@ const Registar = () => {
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
       <h2 className='text-5xl mb-8 font-bold text-center'>Signup</h2>
+     
+        {/* <h1>Loading..</h1>  */}
       <div className='flex flex-col gap-4 w-[350px]'>
         <label htmlFor="#">
           <p className='mb-2 text-lg'>Username</p>
@@ -63,8 +67,13 @@ const Registar = () => {
         </label>
         <input onChange={handleupload} type="file" />
         {/* <input onClick={handlerform} className='bg-blue-700 py-1 rounded text-white ' /> */}
+        {loader ?
+         <p className='bg-blue-700 py-1 rounded text-white text-center'>Uploading...</p> :
         <button onClick={handlerform} className='bg-blue-700 py-1 rounded text-white '>Submit</button>
+
+        }
       </div>
+  
       <div className="login-link flex gap-1 mt-2">
       <p>Have an Account ? </p> 
       <Link to={'/auth/login'}>

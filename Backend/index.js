@@ -3,6 +3,8 @@ import cors from 'cors'
 import { router } from "./blogs/blogs.js";
 import { DB_CONNECT } from "./DB/DBconnect.js";
 import 'dotenv/config'
+import { userrouter } from "./users/users.js";
+import { loginrouter } from "./login/login.js";
 const app = express()
 // import blogshandler from './blogs/blogs.js/router'
 // port created 
@@ -17,3 +19,5 @@ DB_CONNECT()
 app.use(express.json())
 // add routing
 app.use('/api/blogs', router  )
+app.use('/api/auth/register', userrouter  )
+app.use('/api/auth/login', loginrouter  )
