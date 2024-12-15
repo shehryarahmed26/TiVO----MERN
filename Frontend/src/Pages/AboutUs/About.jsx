@@ -3,9 +3,9 @@ import shahab from "../img/shahab.jpeg";
 import kaif from "../img/kaif.jpeg";
 import siddique from "../img/siddique.jpeg";
 import Footer from "../../Components/Footer/Footer";
+// import { redirect, useNavigate } from "react-router-dom";
 
 function About() {
-
     return (
         <>
             <Navbar />

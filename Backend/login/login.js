@@ -6,7 +6,7 @@ loginrouter.post('/', async (req, res) => {
    const {email, password} = req.body
    const auth = await usermodel.findOne({email, password})
    if (auth) {
-   return  res.json({status: 200, auth: true, message: 'user login successfully'})
+   return  res.json({ user: auth, message: 'user login successfully'})
 }
 else {
    return  res.json({status: 500, auth: false, message: 'Invalid email or password'})

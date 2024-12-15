@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, redirect, useNavigate } from 'react-router-dom'
 
 const Registar = () => {
   const [username, setusername] = useState('')
@@ -7,6 +7,7 @@ const Registar = () => {
   const [password, setpassword] = useState('')
   const [userimg, setuserimg] = useState('')
   const [loader, setloader] = useState(false)
+  const Navigate = useNavigate();
   const handlerform =  async ()  => { 
     
     const userobj =  {
@@ -15,12 +16,16 @@ const Registar = () => {
       password,
       userimg
     }
-    // const adduser = await fetch(``)
-
-  // console.log(userobj);
-    
-    // console.log('userobject>>', userobj);
-    
+      let url = await fetch(`https://blogging-app-mern.vercel.app/api/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Specify JSON content
+      },
+        body: JSON.stringify(userobj)
+      })
+      url = await url.json()
+      console.log('User', url);
+      Navigate('/auth/login')
   }
   const handleupload = async (event) => {
     const file = event.target.files[0]
