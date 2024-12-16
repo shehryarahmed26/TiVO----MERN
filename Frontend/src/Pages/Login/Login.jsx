@@ -1,32 +1,36 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Authcontext } from '../../context/authcontext'
 
 const Login = () => {
-  const {setuser} = useContext(Authcontext)
+  const {user, setuser} = useContext(Authcontext)
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
   const [loginerror, setloginerror] = useState(false)
+  const Navigate = useNavigate()
   const handlelogin = async () => {
     if (email, password) {
-
-      const user = {email, password}
+      const userlogin = {email, password}
       let auth = await fetch(`https://blogging-app-mern.vercel.app/api/auth/login`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json', // Specify JSON content
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(userlogin)
       }) 
       auth = await auth.json()
-      if (auth.auth) {
-        // setuser()
-        setloginerror(false)
-      }
-      else {
+      if (auth.auth == false) {
         setloginerror(true)
       }
-      console.log('Authentication >>', auth);
+      else {
+        setloginerror(false)
+        setuser(auth?.user)
+        localStorage.setItem('user', JSON.stringify(auth.user)); // Save user to localStorage
+
+        console.log('User is here >>', user);
+        console.log('Authentication >>', auth);
+        Navigate('/')
+      }
     }
     else {
       console.log('bc phele form to fill kr');

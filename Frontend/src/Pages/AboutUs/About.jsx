@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer/Footer";
 function About() {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="min-h-screen bg-white text-gray-800">
                 <div className="container mx-auto px-6 py-16 md:py-32">
                     <div className="max-w-4xl mx-auto text-center">

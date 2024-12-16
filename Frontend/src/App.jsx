@@ -9,6 +9,8 @@ import Registar from './Pages/Registar/Registar'
 import Footer from './Components/Footer/Footer'
 import Dashboard from './Pages/Admin/Admin'
 import About from './Pages/AboutUs/About'
+import Profile from './Pages/Profile/Profile'
+import CreateBlog from './Components/AddBlog/CreateBlog'
 
 const App = () => {
   
@@ -28,8 +30,9 @@ const App = () => {
     <Route path='/auth/login' element={<Login/>}></Route>
     <Route path='/auth/signup' element={<Registar/>}></Route>
     <Route path='/admin' element={<Dashboard/>}></Route>
-    <Route path='/Aboutus' element={<About/>}></Route>
-    <Route path='/Feautures' element={<Features/>}></Route>
+    <Route path='/user/profile' element={<Profile/>}></Route>
+    {/* <Route path='/Aboutus' element={<About/>}></Route> */}
+    {/* <Route path='/Feautures' element={<Features/>}></Route> */}
     <Route element={
       <>
       <Navbar/>
@@ -38,8 +41,9 @@ const App = () => {
       </>
     }>
     <Route path='/' element={<Home/>}></Route>
-    {/* <Route path='/blogs' element={<Blog/>}></Route> */}
-    {/* <Route path='/features' element={<Features/>}></Route> */}
+    <Route path='/addblog' element={<CreateBlog/>}></Route>
+    <Route path='/Aboutus' element={<About/>}></Route>
+    <Route path='/features' element={<Features/>}></Route>
     </Route>
     </Routes>
   </BrowserRouter>
