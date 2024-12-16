@@ -5,6 +5,7 @@ import { DB_CONNECT } from "./DB/DBconnect.js";
 import 'dotenv/config'
 import { userrouter } from "./users/users.js";
 import { loginrouter } from "./login/login.js";
+import { pending_blogs_router } from "./pendingblogs/Pen-blogs.js";
 const app = express()
 // import blogshandler from './blogs/blogs.js/router'
 // port created 
@@ -16,8 +17,8 @@ app.use(express.json())
 // DB configure
 DB_CONNECT()
 // middleware 
-app.use(express.json())
 // add routing
 app.use('/api/blogs', router  )
 app.use('/api/auth/register', userrouter  )
 app.use('/api/auth/login', loginrouter  )
+app.use('/api/pendingblogs', pending_blogs_router  )
