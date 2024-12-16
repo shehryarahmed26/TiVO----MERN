@@ -1,12 +1,10 @@
 import express  from "express";
-import { Blogmodel } from "../DB/blogmodel.js";
 import { PendingBlogmodel } from "../DB/pendingblogs.js";
 export const pending_blogs_router = express.Router()
 
 pending_blogs_router.get('/', async (req, res) => {
-    const getblogs = await PendingBlogmodel.find()
-    console.log(getblogs);
-    res.json({status: 200, Blogs: getblogs})
+    const penblogs = await PendingBlogmodel.find()
+    res.json({status: 200, Blogs: penblogs})
 })
 pending_blogs_router.post('/', async (req, res) => {
    const blog = req.body

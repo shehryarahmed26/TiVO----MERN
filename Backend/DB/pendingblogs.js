@@ -12,4 +12,4 @@ const blogshcema = new Schema(
         timestamps: true
     }
 )
-export const Blogmodel = mongoose.model('pendingblogs', blogshcema)
+export const PendingBlogmodel = mongoose.model('pendingblogs', blogshcema)
