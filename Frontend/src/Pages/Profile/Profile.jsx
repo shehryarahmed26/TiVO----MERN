@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Authcontext } from "../../context/authcontext";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
   const user = useContext(Authcontext)
+  const Navigate = useNavigate()
+  useEffect(() => {
+    if (!user.user) {
+      Navigate('/auth/login')
+    }
+  }, [user])
+  
   // console.log(user.user);
   
   // const [user, setUser] = useState({

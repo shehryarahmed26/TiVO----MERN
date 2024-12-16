@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../context/authcontext";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
   const {user} = useContext(Authcontext)
@@ -12,11 +13,42 @@ const CreateBlog = () => {
   const [author, setauthor] = useState('')
   const [previewImg, setPreviewImg] = useState("");
   const [blogimg, setblogimg] = useState('')
+  const Navigate = useNavigate()
 
   // Handle Input Changes
+  const uploadblog = async () => {
+    let url = await fetch(`https://blogging-app-mern.vercel.app/api/pendingblogs`, 
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Specify JSON content
+      },
+      body: JSON.stringify(blog)
+      }
+    )
+    url = await url.json()
+    console.log('Blog Added in DB >>', url);
+    setBlog('')
+    setauthor('')
+    setblogimg('')
+    settitle('')
+    setdescription('')
+    setPreviewImg('')
+    
+  } 
+  // without login cant reached this page >>
+
+  useEffect(() => {
+    if (!user) {
+      Navigate('/auth/login')
+    }
+  }, [user])
+
+  // upload blog to pending blogs >> 
   useEffect(() => {
     if (blog) {
-      console.log('Blog >>', blog);
+      uploadblog();
+
       
     }
   }, [blog])

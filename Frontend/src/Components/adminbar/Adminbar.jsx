@@ -9,11 +9,10 @@ const Adminbar = ({ activeSection, setActiveSection }) => {
     { name: 'Blogs', icon: BookOpen, section: 'blogs' },
     { name: 'Users', icon: Users, section: 'users' },
     { name: 'Pending Blogs', icon: Clock, section: 'pendingBlogs' },
-    { name: 'Create a Blog', icon: PenTool, section: 'createBlog' },
   ]
 
   return (
-    <div className="w-64 bg-white shadow-md">
+    <div className="w-64 bg-white shadow-md  h-screen">
       <div className="p-4">
         <Logo />
       </div>

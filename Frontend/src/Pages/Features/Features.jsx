@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
+import { Authcontext } from '../../context/authcontext';
+import { useNavigate } from 'react-router-dom';
 
 const Features = () => {
+  
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="min-h-screen bg-white text-gray-800">
         <div className="container mx-auto px-6 py-16 md:py-32">
