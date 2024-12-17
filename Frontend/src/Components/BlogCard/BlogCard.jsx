@@ -3,12 +3,12 @@ import React from "react";
 const BlogCard = ({ blog }) => {
  
   return (
-    <div className="bg-white w-[48%] mt-6  shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white w-[48%] mt-6  h-[450px] shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
       {/* Blog Banner Image */}
       <img
         src={blog.blogimg}
         alt={blog.title}
-        className="w-full h-48 object-contain"
+        className="w-full h-56 object-cover"
       />
 
       {/* Blog Content */}

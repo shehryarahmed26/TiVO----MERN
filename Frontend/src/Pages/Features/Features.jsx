@@ -4,6 +4,8 @@ import { Authcontext } from '../../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 const Features = () => {
+  window.scroll(0, 0)
+
   
   return (
     <>

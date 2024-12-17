@@ -6,6 +6,8 @@ import { Authcontext } from '../../context/authcontext'
 const Dashboard = () => {
   const {user} = useContext(Authcontext)
   const [auth, setauth] = useState(false)
+  window.scroll(0, 0)
+
   // const [counter, setcounter] = useState(5)
   // const hanlecounter = () = {
 

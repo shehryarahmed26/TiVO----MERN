@@ -4,6 +4,8 @@ import BlogCard from '../../Components/BlogCard/BlogCard'
 const Blogs = () => {
     const [blogs, setblogs] = useState([])
     const [loading, setloading] = useState(true)
+    window.scroll(0, 0)
+
     const GetBlogs = async () => {
         try {
         let blogsdata = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`)

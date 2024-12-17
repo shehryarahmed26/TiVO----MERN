@@ -6,6 +6,8 @@ import Footer from "../../Components/Footer/Footer";
 // import { redirect, useNavigate } from "react-router-dom";
 
 function About() {
+    window.scroll(0, 0)
+
     return (
         <>
             {/* <Navbar /> */}

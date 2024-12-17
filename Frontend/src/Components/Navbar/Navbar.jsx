@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Authcontext } from '../../context/authcontext'
 import { IoMdArrowDropdown, IoIosCreate, IoIosLogOut  } from "react-icons/io";
@@ -11,17 +11,31 @@ import { IoCreateOutline } from "react-icons/io5";
 const Navbar = () => {
   const [toggle, settoggle] = useState(false)
   const  {user, setuser} = useContext(Authcontext)
-  console.log('usecontext done', user);
+  const [navshadow, setnavshadow] = useState('')
+  // console.log('usecontext done', user);
   const handleLogout = () => {
     localStorage.removeItem("user");
     setuser(null);
     settoggle(false)
   };
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      setnavshadow('shadow')
+  }
+    else {
+      setnavshadow('')
+
+    }
+  } )
   
   return (
-    <nav className='flex px-10 justify-between items-center py-4 border-gray-300 border-b'>
+    <nav className={`flex px-10 justify-between h-[80px] sticky top-0 z-20 bg-white items-center py-4 ${navshadow} transition-all`}>
       <div className="right flex items-center gap-10">
-        <Link to='/' className='font-bold text-3xl'>Logo.</Link>
+        <Link to={'/'}>
+        <div className="logo">
+        <img src="/Images/logo.png" className=' w-[200px]' alt="Logo" />
+        </div>
+        </Link>
         <div className="links flex gap-10 justify-center">
           <Link className='text-lg' to='/features'>Features</Link>
           <Link className='text-lg' to='/Blogs'>Blogs</Link>
