@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
-import Blog_Card from '../Blogcard/BlogCard';
+import Blog_Card from '../Blogcard/Blog-Card';
 
 
 const FeaturedBlogs = () => {

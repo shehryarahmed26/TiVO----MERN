@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Blog_Card from '../../Components/Blogcard/BlogCard'
+import Blog_Card from '../../Components/Blogcard/Blog-Card'
 
 const Blogs = () => {
     const [blogs, setblogs] = useState([])
