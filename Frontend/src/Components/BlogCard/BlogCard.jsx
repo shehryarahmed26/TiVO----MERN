@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlogCard = ({ blog }) => {
+const Blog_Card = ({ blog }) => {
  
   return (
     <div className="bg-white w-[48%] mt-6  h-[450px] shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
@@ -48,4 +48,4 @@ const BlogCard = ({ blog }) => {
   );
 };
 
-export default BlogCard;
+export default Blog_Card;

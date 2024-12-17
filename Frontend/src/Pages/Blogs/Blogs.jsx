@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import BlogCard from '../../Components/Blogcard/BlogCard'
+import Blog_Card from '../../Components/Blogcard/BlogCard'
 
 const Blogs = () => {
     const [blogs, setblogs] = useState([])
@@ -32,7 +32,7 @@ console.log('Blogs Get Successfully', blogs)
             { loading ? 
             <p>Loading...</p> :
                 blogs.map((blog) => (
-                    <BlogCard blog={blog}/>
+                    <Blog_Card blog={blog}/>
                 ))
             }
         </div>

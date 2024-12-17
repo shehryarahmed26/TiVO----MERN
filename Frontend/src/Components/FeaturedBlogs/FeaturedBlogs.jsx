@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import BlogCard from '../Blogcard/BlogCard'
 import { FaArrowRight } from "react-icons/fa6";
+import Blog_Card from '../Blogcard/BlogCard';
 
 
 const FeaturedBlogs = () => {
@@ -37,7 +37,7 @@ const FeaturedBlogs = () => {
         <div className="featured-blogs flex items-center justify-center gap-6 flex-wrap px-10">
             {
                 blogs.map((blog) => (
-                    <BlogCard blog={blog}/>
+                    <Blog_Card blog={blog}/>
                 ))
             }
         </div>
