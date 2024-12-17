@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import Adminbar from '../../Components/adminbar/Adminbar'
 import DashboardArea from '../../Components/Dashboard/DashboardArea'
 import { Authcontext } from '../../context/authcontext'
-import 'dotenv/config'
 
 const Dashboard = () => {
   const {user} = useContext(Authcontext)
@@ -11,17 +10,17 @@ const Dashboard = () => {
   // const hanlecounter = () = {
 
   // }
-  const adminemail = Process.env.ADMIN_EMAIL
-  console.log(adminemail);
+  const adminemail = import.meta.env.VITE_ADMIN_EMAIL
+  const adminpassword = import.meta.env.VITE_ADMIN_PASS
   
   const {email, password} = user
   useEffect(() => {
-    if (email ===   'shehryarahmed@gmail.com' && password === 'mernstack') {
+    if (email ===   adminemail && password === adminpassword) {
       setauth(true)
-      console.log('user >>',  user.email, user.password);
+      // console.log('user >>',  user.email, user.password);
     }
-    console.log(email);
-    console.log(password);
+    // console.log(email);
+    // console.log(password);
     
   }, [user])
   
