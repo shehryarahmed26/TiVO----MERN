@@ -12,7 +12,7 @@ const Blogs = () => {
         setloading(false)
     }
     catch (err) {
-        console.log('Error message >>', err);
+        console.log('Error message >>', err)
         
     }
     
