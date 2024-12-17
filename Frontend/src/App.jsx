@@ -11,6 +11,7 @@ import Dashboard from './Pages/Admin/Admin'
 import About from './Pages/AboutUs/About'
 import Profile from './Pages/Profile/Profile'
 import CreateBlog from './Components/AddBlog/CreateBlog'
+import Blogs from './Pages/Blogs/Blogs'
 
 const App = () => {
   
@@ -43,6 +44,7 @@ const App = () => {
     <Route path='/' element={<Home/>}></Route>
     <Route path='/addblog' element={<CreateBlog/>}></Route>
     <Route path='/Aboutus' element={<About/>}></Route>
+    <Route path='/blogs' element={<Blogs/>}></Route>
     <Route path='/features' element={<Features/>}></Route>
     </Route>
     </Routes>

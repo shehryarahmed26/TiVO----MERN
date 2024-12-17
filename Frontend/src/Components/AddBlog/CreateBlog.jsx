@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../context/authcontext";
 import { useNavigate } from "react-router-dom";
+import BlogPopup from "../Blogpopup/Blogpopup";
 
 const CreateBlog = () => {
   const {user} = useContext(Authcontext)
@@ -13,6 +14,7 @@ const CreateBlog = () => {
   const [author, setauthor] = useState('')
   const [previewImg, setPreviewImg] = useState("");
   const [blogimg, setblogimg] = useState('')
+  const [popup, setpopup] = useState(false)
   const Navigate = useNavigate()
 
   // Handle Input Changes
@@ -34,6 +36,7 @@ const CreateBlog = () => {
     settitle('')
     setdescription('')
     setPreviewImg('')
+    setpopup(true)
     
   } 
   // without login cant reached this page >>
@@ -177,6 +180,7 @@ const CreateBlog = () => {
         >
           Publish Blog
         </button>
+        <BlogPopup isOpen={popup} onClose={() => Navigate('/')}/>
       </div>
       }
     </div>

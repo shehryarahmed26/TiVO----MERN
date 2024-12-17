@@ -1,24 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const PendingBlogCard = ({ blog }) => {
-    const acceptblog = async () => {
-        const upload = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`, 
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json', // Specify JSON content
-                },
-                body: JSON.stringify(blog)
-            })
-            const removeblog = await fetch(`https://blogging-app-mern.vercel.app/api/pendingblogs/${blog._id}`,
-                {method: "DELETE"}
-            )
-    }
-    const deleteblog = async () => {
-        const removeblog = await fetch(`https://blogging-app-mern.vercel.app/api/pendingblogs/${blog._id}`,
-            {method: "DELETE"}
-        )
-    }
+const PendingBlogCard = ({ blog, acceptblog, deleteblog }) => {
+  const Navigate = useNavigate()
+   
   return (
     <div className="bg-white w-[48%] mt-6  shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
       {/* Blog Banner Image */}
@@ -59,8 +44,8 @@ const PendingBlogCard = ({ blog }) => {
           </div>
           </div>
           <div className="accepe-reject flex items-center justify-center gap-2">
-            <button onClick={acceptblog} className="text-green-600 border border-green-600 px-4 rounded">Accept</button>
-            <button onClick={deleteblog} className="text-red-600 border border-red-600 px-4 rounded" >Reject</button>
+            <button onClick={acceptblog(blog)} className="text-green-600 border border-green-600 px-4 rounded">Accept</button>
+            <button onClick={deleteblog(blog)} className="text-red-600 border border-red-600 px-4 rounded" >Reject</button>
           </div>
         </div>
       </div>

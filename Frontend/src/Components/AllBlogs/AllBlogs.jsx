@@ -29,7 +29,8 @@ const AllBlologs = () => {
      { loading ? 
      <h1>Loading...</h1> :
      allblogs.map((blog) => (
-            <PendingBlogCard blog={blog}/>
+      
+            < PendingBlogCard blog={blog}/>
         ))
      }
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
 const PendingBlogCard = ({ blog }) => {
+  
     const acceptblog = async () => {
         const upload = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`, 
             {
