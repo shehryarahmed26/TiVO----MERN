@@ -12,6 +12,7 @@ import About from './Pages/AboutUs/About'
 import Profile from './Pages/Profile/Profile'
 import CreateBlog from './Components/AddBlog/CreateBlog'
 import Blogs from './Pages/Blogs/Blogs'
+import AboutUs from './Pages/AboutUs/About'
 
 const App = () => {
   
@@ -43,7 +44,7 @@ const App = () => {
     }>
     <Route path='/' element={<Home/>}></Route>
     <Route path='/addblog' element={<CreateBlog/>}></Route>
-    <Route path='/Aboutus' element={<About/>}></Route>
+    <Route path='/Aboutus' element={<AboutUs/>}></Route>
     <Route path='/blogs' element={<Blogs/>}></Route>
     <Route path='/features' element={<Features/>}></Route>
     </Route>

@@ -12,9 +12,9 @@ const Herosection = () => {
     <div className="container text-center sm:text-start flex-col gap-6 mx-auto px-6 w-[100%] sm:w-[60%] items-center">
       {/* Heading */}
       <div className="text  mt-10 mb-4 w-fit px-6 mx-auto flex justify-center border border-gray-400 py-0.5 rounded-full text-lg gap-2 text-center">
-      <p className='text-center text-gray-900'>Unleash Your Words and share with others</p>
+      <p className='text-center text-sm sm:text-base text-gray-900'>Unleash Your Words and share with others</p>
       <Link to={'/auth/login'}>
-      <a className='text-center flex items-center gap-1 text-gray-950 font-semibold' href="#">Join Now <FaArrowRight/> </a>
+      <a className='text-center text-sm sm:text-base flex items-center gap-1 text-gray-950 font-semibold' href="#">Join Now <FaArrowRight/> </a>
       </Link>
       </div>
       <h1 className="text-3xl sm:text-5xl font-bold text-center text-gray-800">

@@ -1,104 +1,102 @@
-import React, { useContext, useEffect } from 'react';
-import Navbar from '../../Components/Navbar/Navbar';
-import { Authcontext } from '../../context/authcontext';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 const Features = () => {
-  window.scroll(0, 0)
-
-  
   return (
-    <>
-      {/* <Navbar /> */}
+    <div className="bg-gray-100 py-12">
+      {/* Hero Section */}
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-gray-800">Discover Amazing Features</h2>
+        <p className="mt-4 text-gray-600">
+          Unlock the full potential of blogging with our powerful features.
+        </p>
+      </div>
 
-      <div className="min-h-screen bg-white text-gray-800">
-        <div className="container mx-auto px-6 py-16 md:py-32">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-600 mb-4 transform transition duration-500 ease-in-out hover:scale-105 hover:text-blue-800">
-              Features
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Discover the powerful web development features we offer, built to ensure your website is fast, secure, and responsive across all devices.
-            </p>
+      {/* Features Section */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-16">
+        <div className="bg-white shadow-lg p-6 rounded-lg hover:scale-105 transform transition-all duration-300">
+          <div className="text-blue-500 text-4xl mb-4">
+            📝
           </div>
+          <h3 className="text-lg font-semibold text-gray-800">Easy Blog Publishing</h3>
+          <p className="text-sm text-gray-600 mt-2">
+            Create and publish blogs effortlessly with our intuitive platform.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2v4m0 0L8 6m4 0l4 4m-4-4v16m0 0l4-4m-4 4l-4-4"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Responsive Design</h3>
-              <p className="text-gray-600">
-                Our websites are designed to be fully responsive, ensuring they look great on all screen sizes from mobile to desktop.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l9-6 9 6V3H3v6zm0 12h18v-6l-9 6-9-6v6z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Performance Optimization</h3>
-              <p className="text-gray-600">
-                We optimize websites for performance, ensuring fast loading times, smooth user experiences, and minimal bounce rates.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a9 9 0 00-9 9v6a9 9 0 0018 0V11a9 9 0 00-9-9zM12 3a7 7 0 017 7v6a7 7 0 01-14 0V10a7 7 0 017-7z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Security Features</h3>
-              <p className="text-gray-600">
-                We integrate robust security measures to protect your website from cyber threats, ensuring your users' data is safe and secure.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.5 12l9-9 9 9-9 9-9-9z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Cross-Browser Compatibility</h3>
-              <p className="text-gray-600">
-                Our websites are tested and optimized to work seamlessly across all major browsers, including Chrome, Firefox, Safari, and Edge.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 4l2 2 2-2m-2 2v12m0 0l-2-2m2 2l2 2M6 12h12"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">SEO Optimization</h3>
-              <p className="text-gray-600">
-                We implement SEO best practices to ensure your website ranks well in search engine results, increasing visibility and organic traffic.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3V2a7 7 0 017 7v5h2a1 1 0 011 1v6a1 1 0 01-1 1h-2v5a7 7 0 01-7 7h-1a7 7 0 01-7-7v-5H4a1 1 0 01-1-1v-6a1 1 0 011-1h2V7a7 7 0 017-7h1a7 7 0 017 7z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Modern Web Technologies</h3>
-              <p className="text-gray-600">
-                We use the latest web technologies, including HTML5, CSS3, JavaScript frameworks, and responsive frameworks to build cutting-edge websites.
-              </p>
-            </div>
+        <div className="bg-white shadow-lg p-6 rounded-lg hover:scale-105 transform transition-all duration-300">
+          <div className="text-green-500 text-4xl mb-4">
+            👤
           </div>
+          <h3 className="text-lg font-semibold text-gray-800">User Profiles</h3>
+          <p className="text-sm text-gray-600 mt-2">
+            Build your profile to showcase your blogs and connect with others.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg p-6 rounded-lg hover:scale-105 transform transition-all duration-300">
+          <div className="text-purple-500 text-4xl mb-4">
+            📂
+          </div>
+          <h3 className="text-lg font-semibold text-gray-800">Saved Drafts</h3>
+          <p className="text-sm text-gray-600 mt-2">
+            Save your blogs as drafts and publish them when you’re ready.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg p-6 rounded-lg hover:scale-105 transform transition-all duration-300">
+          <div className="text-yellow-500 text-4xl mb-4">
+            🗂️
+          </div>
+          <h3 className="text-lg font-semibold text-gray-800">Categories Management</h3>
+          <p className="text-sm text-gray-600 mt-2">
+            Organize blogs into categories for better discoverability.
+          </p>
         </div>
       </div>
-    </>
+
+      {/* Categories Section */}
+      <div className="mt-16 px-4 md:px-16">
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Explore Categories</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {["Sports", "Entertainment", "Technology", "Lifestyle", "Education", "Travel"].map((category, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center justify-center hover:bg-blue-100 transition-colors duration-300"
+            >
+              <div className="text-4xl text-blue-500 mb-4">📚</div>
+              <h3 className="text-lg font-semibold text-gray-800">{category}</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Blogs related to {category}.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Categories Marquee */}
+      <div className="bg-black py-4 overflow-hidden mx-11">
+        <div className="whitespace-nowrap animate-marquee">
+          {['Sports', 'Technology', 'Travel', 'Lifestyle', 'Education', 'Entertainment', 'Fooding', 'Medical', 'Fun', 'Knowledge', 'Business'].map((category, index) => (
+            <span key={index} className="text-white text-lg mx-8">
+              {category}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Call to Action Section */}
+      <div className="mt-16 bg-blue-500 text-white py-12 text-center">
+        <h2 className="text-3xl font-bold">Ready to Start Your Blogging Journey?</h2>
+        <p className="mt-4">Join our platform and share your ideas with the world!</p>
+        <button className="mt-6 bg-white text-blue-500 py-2 px-6 rounded-full shadow-md hover:bg-gray-200 transition-all duration-300">
+          Get Started
+        </button>
+      </div>
+    </div>
   );
-}
+};
 
 export default Features;
+
+// Tailwind CSS animation (add this to your global CSS file)
+

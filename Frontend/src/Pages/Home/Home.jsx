@@ -16,6 +16,14 @@ const Home = () => {
         <Categories/>
         <FeaturedBlogs/>
         <Testinomials/>
+        <div className="mt-16 bg-gray-900 text-white py-16 text-center">
+        <h2 className="text-3xl font-bold">Ready to Start Your Blogging Journey?</h2>
+        <p className="mt-4">Join our platform and share your ideas with the world!</p>
+        <button className="mt-6 bg-blue-500 text-white py-2 px-6 rounded shadow-md hover:bg-blue-600 transition-all duration-300">
+          Get Started
+        </button>
+      </div>
+        
 
     </div>
   )

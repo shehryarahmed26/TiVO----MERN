@@ -1,117 +1,143 @@
-import Navbar from "../../Components/Navbar/Navbar";
-import shahab from "../img/shahab.jpeg";
-import kaif from "../img/kaif.jpeg";
-import siddique from "../img/siddique.jpeg";
-import Footer from "../../Components/Footer/Footer";
-// import { redirect, useNavigate } from "react-router-dom";
+import React from "react";
 
-function About() {
-    window.scroll(0, 0)
+const AboutUs = () => {
+  const stats = [
+    { value: "10K+", label: "Blogs Published" },
+    { value: "500+", label: "Active Users" },
+    { value: "50+", label: "Categories Covered" },
+  ];
+  window.scroll(0, 0)
 
-    return (
-        <>
-            {/* <Navbar /> */}
-            <div className="min-h-screen bg-white text-gray-800">
-                <div className="container mx-auto px-6 py-16 md:py-32">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-600 transform transition duration-500 ease-in-out hover:scale-105 hover:text-blue-800">
-                            About Us
-                        </h1>
-                        <p className="text-lg md:text-xl mb-8 text-gray-600 leading-relaxed transform transition duration-300 hover:text-gray-800">
-                            Welcome to our blog! We are a team of passionate designers, and developers who are dedicated to providing high-quality, insightful articles on a wide variety of topics.
-                            From web development tutorials to the latest trends in technology, our content aims to inform, inspire, and entertain.
-                        </p>
+  return (
+    <div className="bg-gray-50">
+      {/* Hero Section */}
+      <div className="relative bg-gray-900 text-white py-14 px-6 sm:px-12 lg:px-20">
+        <div className="max-w-6xl mx-auto px-6 sm:px-48  text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            About us
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl">
+          At Tivo, we are dedicated to empowering bloggers and readers alike by providing a seamless platform that transforms the blogging experience.
+          </p>
+          <a
+            href="#learn-more"
+            className="mt-8 inline-block bg-blue-500 text-white px-6 py-3 rounded shadow-md hover:bg-blue-600 transition-all duration-300"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
 
-                        <div className="mb-12">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-blue-700 mb-4 transform transition duration-500 ease-in-out hover:scale-105">
-                                Our Mission
-                            </h2>
-                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                                Our mission is to create a space where people can explore new ideas, stay informed, and get inspired. We aim to provide high-quality content that is accessible and relevant to everyone, especially those passionate about technology and web development.
-                            </p>
-                        </div>
+      {/* About Content */}
+      <div className="max-w-7xl mx-auto py-20 px-6 sm:px-12 lg:px-20" id="learn-more">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWNvbW1lcmNlfGVufDB8fDB8fHww"
+              alt="Our Journey"
+              className="rounded-lg shadow-md"
+            />
+            <div className="absolute top-0 left-0 bg-blue-500 opacity-50 w-32 h-32 rounded-full blur-xl -z-10"></div>
+          </div>
 
-                        <div className="mb-12">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-blue-700 mb-4 transform transition duration-500 ease-in-out hover:scale-105">
-                                Our Vision
-                            </h2>
-                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                                We envision a world where people continuously learn and grow through content that is informative, thoughtful, and inspiring. Our platform is a place where readers can come together, share stories, and explore diverse perspectives in the field of web development, technology, and beyond.
-                            </p>
-                        </div>
+          {/* Text Content */}
+          <div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              Our Mission & Vision
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+            Tivo was founded on the principles of creativity, community, and innovation. Our vision is to create a platform where sharing ideas and stories brings people together.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+            Whether you're an aspiring writer or an enthusiastic reader, we ensure a seamless and inspiring blogging experience.
+            </p>
+          </div>
+        </div>
+      </div>
 
-                        <div className="mb-12">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-blue-700 mb-4 transform transition duration-500 ease-in-out hover:scale-105">
-                                Our Core Values
-                            </h2>
-                            <ul className="list-disc pl-8 text-lg md:text-xl text-gray-600">
-                                <li className="mb-3 transform transition duration-300 hover:text-blue-600 hover:scale-105">Integrity - We value honesty and transparency in every line of code and every article we write.</li>
-                                <li className="mb-3 transform transition duration-300 hover:text-blue-600 hover:scale-105">Creativity - We embrace innovative solutions to web development challenges and unique content creation.</li>
-                                <li className="mb-3 transform transition duration-300 hover:text-blue-600 hover:scale-105">Inclusivity - We believe that every developer, no matter their background, should have access to knowledge and opportunities in the tech world.</li>
-                                <li className="mb-3 transform transition duration-300 hover:text-blue-600 hover:scale-105">Quality - We prioritize delivering high-quality content and well-structured, efficient code that our readers and users can trust.</li>
-                            </ul>
-                        </div>
+      {/* Stats Section */}
+      <div className="bg-blue-50 py-16 px-6 sm:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-5xl font-bold text-gray-800 mb-8">
+            Why Choose Us?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-4xl font-bold text-blue-500">{stat.value}</h3>
+                <p className="text-gray-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <section data-aos='zoom-in' className="text-gray-600 body-font">
+      <h2 className="text-2xl py-8 font-extrabold text-gray-800 text-center sm:text-5xl">
+          Our Team Members
+        </h2>
 
-                        <div className="mt-16">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-blue-600 mb-8 transform transition duration-500 ease-in-out hover:scale-105">
-                                Meet Our Team
-                            </h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                                {/* Shahab */}
-                                <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                                    <img
-                                        src={shahab}
-                                        alt="Team Member"
-                                        className="w-32 h-32 rounded-full mx-auto mb-4"
-                                    />
-                                    <h3 className="text-xl font-semibold text-gray-800">Shahab Uddin</h3>
-                                    <p className="text-gray-500">MERN Developer</p>
-                                    <p className="text-gray-600 text-sm mt-2">
-                                        Shahab is a full-stack developer with expertise in building dynamic, scalable web applications using the MERN stack (MongoDB, Express.js, React, Node.js).
-                                        He is passionate about coding, problem-solving, and continuously exploring new technologies in web development.
-                                    </p>
-                                </div>
-                                {/* Kaif */}
-                                <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                                    <img
-                                        src={kaif}
-                                        alt="Team Member"
-                                        className="w-32 h-32 rounded-full mx-auto mb-4"
-                                    />
-                                    <h3 className="text-xl font-semibold text-gray-800">Kaif Khan</h3>
-                                    <p className="text-gray-500">Front-End Developer</p>
-                                    <p className="text-gray-600 text-sm mt-2">
-                                        Kaif specializes in front-end development, building beautiful, responsive web designs with modern frameworks like React. He is committed to crafting user-friendly and aesthetically pleasing interfaces that enhance the user experience.
-                                    </p>
-                                </div>
-                                {/* Siddique */}
-                                <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                                    <img
-                                        src={siddique}
-                                        alt="Team Member"
-                                        className="w-32 h-32 rounded-full mx-auto mb-4"
-                                    />
-                                    <h3 className="text-xl font-semibold text-gray-800">Siddique Ahmed</h3>
-                                    <p className="text-gray-500">Problem Solver</p>
-                                    <p className="text-gray-600 text-sm mt-2">
-                                        Siddique is a skilled developer and problem solver. He thrives on tackling complex challenges in web development and finding optimal solutions. His expertise ranges from debugging to creating robust, high-performance web apps.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+  <div className="container px-5 py-6 mx-auto">
+    <div className="flex flex-wrap -m-4">
+      <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-32 h-32 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/shehryar.jpg"
+          />
+          <p className="leading-relaxed">
+          Shehryar Ahmed is a skilled software developer with passionate for building high quality softwares that solves real world problems. 
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Shehryar Ahmed | Founder
+          </h2>
+          <p className="text-gray-500">Software Developer</p>
+        </div>
+      </div>
+      <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-32 h-32 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/shahab.jpeg"
+          />
+          <p className="leading-relaxed">
+          Shahabuddin Ghori is also a skilled software developer with expertise in creating innovative solutions and enhance user experience. 
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Shahabudin Ghori
+          </h2>
+          <p className="text-gray-500">Software Developer</p>
+        </div>
+      </div>
+      <div className="lg:w-1/3 lg:mb-0 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-32 h-32 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/kaif.jpeg"
+          />
+          <p className="leading-relaxed">
+          Muhammad Kaif is a emerging frontend developer with a passion of ui/ux designs and enhance user experience
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Inam Ullah Khan
+          </h2>
+          <p className="text-gray-500">SQA Engineer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  );
+};
 
-                        <div className="mt-16">
-                            <p className="text-lg font-medium text-gray-600">
-                                Thank you for visiting our blog. We hope you find our content valuable, whether you're a beginner or a seasoned developer. Stay connected with us for more tutorials, tips, and insights into the ever-evolving world of web development!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <Footer/>
-        </>
-    );
-}
-
-export default About;
+export default AboutUs;
