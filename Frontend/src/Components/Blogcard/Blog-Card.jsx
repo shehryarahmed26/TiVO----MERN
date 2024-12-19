@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../context/authcontext";
+import { Link } from "react-router-dom";
 
 const Blog_Card = ({ blog }) => {
   const [admin, setadmin] = useState(false)
@@ -42,7 +43,9 @@ const Blog_Card = ({ blog }) => {
             ? `${blog.description.substring(0, 100)}...`
             : blog.description}
         </p>
+        <Link to={`/blogdetail/${blog._id}`}>
         <p className="text-end text-blue-500 cursor-pointer hover:text-blue-700 transition-all">Readmore...</p>
+        </Link>
 
         {/* User Info */}
         <div className="flex items-center justify-between  mt-4">

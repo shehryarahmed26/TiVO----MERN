@@ -7,6 +7,12 @@ router.get('/', async (req, res) => {
     console.log(getblogs);
     res.json({status: 200, Blogs: getblogs})
 })
+router.get('/details/:id', async (req, res) => {
+    const {id} = req.params
+    const getblogs = await Blogmodel.findById(id)
+    console.log(getblogs);
+    res.json({status: 200, Blogs: getblogs})
+})
 router.post('/', async (req, res) => {
    const blog = req.body
    const blogs = await Blogmodel(blog)
