@@ -11,8 +11,8 @@ const Testinomials = () => {
   return (
     <section className="py-8">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800">Testimonials</h2>
-          <div className="mt-10 sm:grid gap-8 hidden sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-3xl  my-6 font-semibold text-gray-800">Testimonials</h2>
+          <div className="mt-10 sm:hidden gap-8 hidden sm:grid-cols-2 lg:grid-cols-3">
             {testinomials.map((testimonial, index) => (
               <div
                 key={index}
@@ -26,7 +26,7 @@ const Testinomials = () => {
               </div>
             ))}
           </div>
-          <Carousel autoPlay={true} dynamicHeight={true} infiniteLoop  showIndicators={false} showArrows={false} showStatus={false} showThumbs={false}>
+          <Carousel autoPlay={true}  infiniteLoop  showIndicators={false} showArrows={false} showStatus={false} showThumbs={false}>
           {/* <div className="mt-10 flex overflow-hidden"> */}
             {testinomials.map((testimonial, index) => (
               <div

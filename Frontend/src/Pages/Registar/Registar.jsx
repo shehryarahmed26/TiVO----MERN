@@ -31,6 +31,7 @@ const Registar = () => {
     }
     else {
       seterror(true)
+      alert('something wrong')
     }
   };
 
@@ -51,7 +52,9 @@ const Registar = () => {
       console.log('Userimg >>', userimg);
     }
     console.log(upload);
-    setloader(false);
+    setTimeout(() => {
+      setloader(false);
+    }, 2000);
   };
 
   return (
