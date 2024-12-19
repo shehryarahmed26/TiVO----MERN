@@ -3,7 +3,7 @@ import React from "react";
 const Blog_Card = ({ blog }) => {
  
   return (
-    <div className="bg-white w-[100%] sm:w-[48%] mt-6  h-[480px] shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white w-[100%] sm:w-[48%] mt-6  h-[500px] sm:h-fit shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
       {/* Blog Banner Image */}
       <img
         src={blog.blogimg}

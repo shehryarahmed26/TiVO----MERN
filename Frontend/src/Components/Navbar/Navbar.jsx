@@ -6,32 +6,16 @@ import { FaRegUser, FaUser } from "react-icons/fa";
 import { IoCreateOutline, IoDesktop } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 import { CiCircleInfo, CiLocationArrow1, CiLogout, CiStar } from "react-icons/ci";
-
-
-
-
-// import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import MailIcon from '@mui/icons-material/Mail';
-
- 
-
 
 const Navbar = () => {
+
   const [toggle, settoggle] = useState(false)
   const  {user, setuser} = useContext(Authcontext)
   const [navshadow, setnavshadow] = useState('')
   const [open, setOpen] = React.useState(false);
-  // console.log('usecontext done', user);
+  console.log('usecontext done', user);
   
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -76,7 +60,7 @@ const Navbar = () => {
        <div>
          <div className="without-user flex flex-col gap-6 items-center mt-10">
          <Link to={'/auth/login'}>
-          <p className='bg-black text-white px-4  py-1 rounded'>Login</p>
+          <p className='bg-black text-white px-4 py-1 rounded'>Login</p>
         </Link>
          <Link to={'/auth/signup'}>
           <p className='border border-black  px-4  py-1 rounded hover:border-blue-500 hover:text-blue-500 transition-all duration-200'>Signup</p>
@@ -136,22 +120,24 @@ const Navbar = () => {
           <Link className='text-lg' to='/Aboutus'>About Us</Link>
         </div>
       </div>
+
   { user ? 
     <div className='flex items-center justify-center gap-2'>
-      <img className='w-[40px] h-[40px] rounded-full' src={user.userimg} alt="" />
-      <p>{user.username}</p>
-      <p onClick={() => settoggle(!toggle)}>< IoMdArrowDropdown /></p>
-
-    </div> :
+      <img className='w-[40px] h-[40px] mr-2 sm:mr-0 rounded-full' src={user.userimg} alt="" />
+      <p className=''>{user.username}</p>
+      <p className=' hover:text-blue-500 transition-all' onClick={() => settoggle(!toggle)}>< IoMdArrowDropdown /></p>
+    </div> 
+          :
        <div className="auth flex gap-5">
         <Link to={'/auth/signup'}>
           <p className='bg-blue-500 text-white px-4 hidden sm:block py-1 rounded'>Signup</p>
         </Link>
         <Link to={'/auth/login'}>
-          <p className='bg-black text-white px-4  py-1 rounded'>Login</p>
+          <p className='bg-black text-white px-4 mr-2 sm:mr-0  py-1 rounded'>Login</p>
         </Link>
       </div>
       }
+
       { toggle &&
       <div className="info-toggle flex flex-col w-[150px] gap-2 absolute top-16 right-10 py-2 bg-white  shadow-sm shadow-gray-300">
         <Link to={'/user/profile'}>
@@ -160,9 +146,10 @@ const Navbar = () => {
         <Link to={'/addblog'}>
         <p className='flex items-center gap-2 hover:bg-gray-200 w-full cursor-pointer px-4'> <IoCreateOutline />Create Blog</p>
         </Link>
-        <p onClick={handleLogout()} className='flex items-center gap-2 hover:bg-black hover:text-white w-full cursor-pointer px-4'><IoIosLogOut/> Logout</p>
-      </div> 
+        <p onClick={handleLogout} className='flex items-center gap-2 hover:bg-black hover:text-white w-full cursor-pointer px-4'><IoIosLogOut/> Logout</p>
+      </div>
       }
+
     </nav>
   )
 }
