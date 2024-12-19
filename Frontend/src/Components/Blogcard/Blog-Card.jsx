@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Authcontext } from "../../context/authcontext";
 
 const Blog_Card = ({ blog }) => {
+  const [admin, setadmin] = useState(false)
+  const {user} = useContext(Authcontext)
+   const adminemail = import.meta.env.VITE_ADMIN_EMAIL
+    const adminpassword = import.meta.env.VITE_ADMIN_PASS
+    const deleteblog = async () => {
+      const removeblog = await fetch(`https://blogging-app-mern.vercel.app/api/blogs/${blog._id}`,
+          {method: "DELETE"}
+      )
+  }
+    useEffect(() => {
+      if (user.email ===   adminemail && user.password === adminpassword) {
+        setadmin(true) 
+      }
+      else {
+        setadmin(false)
+      }
+    }, [user])
  
   return (
-    <div className="bg-white w-[100%] sm:w-[48%] mt-6  h-[500px] sm:h-fit shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white w-[100%] sm:w-[48%] mt-6  h-fit sm:h-fit shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
       {/* Blog Banner Image */}
       <img
         src={blog.blogimg}
@@ -41,6 +59,12 @@ const Blog_Card = ({ blog }) => {
             <span className="text-gray-800 font-medium">{blog.username}</span>
           </div>
           </div>
+          {
+            admin &&
+            <div className="accepe-reject flex items-center justify-end gap-2">
+            <button onClick={deleteblog} className="text-red-600 border border-red-600 px-4 rounded" >Remove</button>
+          </div>
+          }
          
         </div>
       </div>

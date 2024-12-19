@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PendingBlogCard from "../PendingBlogcard/PendingBlogCard";
+import Blog_Card from "../Blogcard/Blog-Card";
 
 const AllBlologs = () => {
   const [allblogs, setallblogs] = useState([]);
@@ -30,7 +31,7 @@ const AllBlologs = () => {
      <h1>Loading...</h1> :
      allblogs.map((blog) => (
       
-            < PendingBlogCard blog={blog}/>
+            < Blog_Card blog={blog}/>
         ))
      }
     </div>

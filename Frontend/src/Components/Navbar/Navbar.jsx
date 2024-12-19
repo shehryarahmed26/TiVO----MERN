@@ -124,8 +124,8 @@ const Navbar = () => {
   { user ? 
     <div className='flex items-center justify-center gap-2'>
       <img className='w-[40px] h-[40px] mr-2 sm:mr-0 rounded-full' src={user.userimg} alt="" />
-      <p className=''>{user.username}</p>
-      <p className=' hover:text-blue-500 transition-all' onClick={() => settoggle(!toggle)}>< IoMdArrowDropdown /></p>
+      <p className='hidden sm:inline-block'>{user.username}</p>
+      <p className=' hover:text-blue-500 transition-all hidden sm:inline-block' onClick={() => settoggle(!toggle)}>< IoMdArrowDropdown /></p>
     </div> 
           :
        <div className="auth flex gap-5">

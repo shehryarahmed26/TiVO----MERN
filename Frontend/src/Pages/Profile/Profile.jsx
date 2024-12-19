@@ -15,8 +15,8 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
-      <div className="bg-white relative shadow-lg rounded-lg p-8 w-full max-w-sm">
+    <div className="flex justify-center  mt-16 sm:mt-0 sm:items-center min-h-screen sm:bg-gradient-to-b from-gray-100 to-gray-200">
+      <div className="bg-white relative sm:shadow-lg rounded-lg p-8 w-full max-w-sm">
         <Link to="/">
           <p className="absolute top-4 left-4 flex items-center gap-1 text-gray-500 hover:text-blue-600 transition-all">
             <FaArrowLeftLong /> Back
@@ -27,7 +27,7 @@ const Profile = () => {
           <img
             src={user.user.userimg || "https://via.placeholder.com/150"}
             alt="Profile"
-            className="w-24 h-24 object-cover rounded-full border-4 border-blue-500 shadow-md"
+            className="w-32 h-32 object-cover rounded-full border-4 border-blue-500 shadow-md"
           />
           <h1 className="mt-4 text-xl font-semibold text-gray-800">
             {user.user.username}
@@ -44,6 +44,7 @@ const Profile = () => {
             </label>
             <input
               type="text"
+              disabled={true}
               value={user.user.username}
               readOnly
               className="w-full px-4 py-2 mt-2 text-gray-700 bg-gray-100 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500 cursor-not-allowed"
@@ -72,7 +73,7 @@ const Profile = () => {
             user.logout(); // Assuming you have a logout function in your context
             Navigate("/auth/login");
           }}
-          className="w-full mt-6 bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 transition duration-200"
+          className="w-full mt-6 bg-gray-800 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 transition duration-200"
         >
           Logout
         </button>

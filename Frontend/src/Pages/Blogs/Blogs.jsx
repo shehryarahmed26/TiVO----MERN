@@ -26,7 +26,7 @@ useEffect(() => {
 }, [])
 console.log('Blogs Get Successfully', blogs)
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen p-4'>
         <h1 className='text-center my-10 text-4xl font-semibold'>Explore Blogs</h1>
         <div className="blogs flex justify-center gap-6 flex-wrap">
             { loading ? 

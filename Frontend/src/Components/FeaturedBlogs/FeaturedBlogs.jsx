@@ -11,7 +11,7 @@ const FeaturedBlogs = () => {
         try {
             let blogs = await fetch(`https://blogging-app-mern.vercel.app/api/blogs`)
         blogs = await blogs.json()
-        setblogs(blogs.Blogs.slice(0, 3))        
+        setblogs(blogs.Blogs.slice(0, 4))        
         setloading(false)
         }
         catch (err) {

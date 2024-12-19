@@ -58,7 +58,7 @@ const Registar = () => {
   };
 
   return (
-    <div className="flex items-center justify-center  pt-5 pb-5 min-h-screen bg-gray-100">
+    <div className="flex sm:items-center justify-center  pt-5 pb-5 min-h-screen sm:bg-gray-100">
       <div className="w-full max-w-md bg-white  rounded-lg shadow-lg p-6">
       <img src="/Images/logo2.png" className="w-[500px] h-[100px] object-cover  mx-auto" alt="" />
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Sign Up</h2>
