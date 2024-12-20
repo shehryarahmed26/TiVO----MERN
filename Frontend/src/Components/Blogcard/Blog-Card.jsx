@@ -13,7 +13,7 @@ const Blog_Card = ({ blog }) => {
       )
   }
     useEffect(() => {
-      if (user.email ===   adminemail && user.password === adminpassword) {
+      if (user?.email ===   adminemail && user?.password === adminpassword) {
         setadmin(true) 
       }
       else {
