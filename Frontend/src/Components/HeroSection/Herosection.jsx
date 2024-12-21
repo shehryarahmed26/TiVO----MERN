@@ -15,14 +15,14 @@ const Herosection = () => {
       {/* Heading */}
         {
           !user &&  
-      <div className="text  mt-6 mb-10 sm:mb-10 w-fit px-3 sm:px-6 mx-auto flex sm:flex-row items-center justify-center border border-gray-400 py-0.5 rounded-full text-lg gap-2 text-center">
-          <p className='text-center text-sm sm:text-base text-gray-900'>Unleash Your Words and share with others</p>
+      <div className="text-xs  mt-6 mb-10 sm:mb-10 w-fit px-4 sm:px-6 mx-auto flex sm:flex-row items-center justify-center border border-gray-400 py-0.5 rounded-full sm:text-lg gap-2 text-center">
+          <p className='text-center text-xs sm:text-base text-gray-900'>Unleash Your Words and share with others</p>
       <Link to={'/auth/login'}>
       <a className='text-center text-sm sm:text-base flex items-center gap-1 text-gray-950 font-semibold' href="#">Join Now <FaArrowRight/> </a>
       </Link>
       </div>
         }
-      <h1 className="text-3xl sm:text-5xl font-bold text-center text-gray-800">
+      <h1 className="text-3xl mt-8 sm:text-5xl font-bold text-center text-gray-800">
         Join Our Community of Passionate Writers!
       </h1>
   

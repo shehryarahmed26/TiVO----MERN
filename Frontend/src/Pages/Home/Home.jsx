@@ -5,6 +5,8 @@ import Testinomials from '../../Components/Testinomials/Testinomials'
 import Categories from '../../Components/Categories/Categories'
 import FeaturedBlogs from '../../Components/FeaturedBlogs/FeaturedBlogs'
 import { Authcontext } from '../../context/authcontext'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Home = () => {
   const {user} = useContext(Authcontext)

@@ -1,22 +1,25 @@
 import React from "react";
+import CountUp from 'react-countup';
+import Counterup from "../../Components/Counter/Counterup";
+
 
 const AboutUs = () => {
-  const stats = [
-    { value: "10K+", label: "Blogs Published" },
-    { value: "500+", label: "Active Users" },
-    { value: "50+", label: "Categories Covered" },
-  ];
+  // const stats = [
+  //   { value: "10K+", label: "Blogs Published" },
+  //   { value: "500+", label: "Active Users" },
+  //   { value: "50+", label: "Categories Covered" },
+  // ];
   window.scroll(0, 0)
 
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white py-14 px-6 sm:px-12 lg:px-20">
-        <div className="max-w-6xl mx-auto px-6 sm:px-48  text-center">
+        <div className="max-w-6xl mx-auto px-0 sm:px-48  text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             About us
           </h1>
-          <p className="mt-6 text-lg sm:text-xl">
+          <p className="mt-6 text-base sm:text-xl">
           At Tivo, we are dedicated to empowering bloggers and readers alike by providing a seamless platform that transforms the blogging experience.
           </p>
           <a
@@ -59,20 +62,18 @@ const AboutUs = () => {
       {/* Stats Section */}
       <div className="bg-blue-50 py-16 px-6 sm:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl font-bold text-gray-800 mb-8">
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-8">
             Why Choose Us?
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
+          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div
-                key={index}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-4xl font-bold text-blue-500">{stat.value}</h3>
-                <p className="text-gray-600">{stat.label}</p>
+                <h3 className="text-4xl font-bold text-blue-500"><CountUp end={100} duration={5}/>k</h3>
+                <p className="text-gray-600">Blogs Published</p>
               </div>
-            ))}
-          </div>
+          </div> */}
+          <Counterup/>
         </div>
       </div>
       <section data-aos='zoom-in' className="text-gray-600 body-font">

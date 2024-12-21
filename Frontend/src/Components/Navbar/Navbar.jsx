@@ -104,7 +104,7 @@ const Navbar = () => {
     <nav className={`flex px-2 sm:px-10 justify-between h-[80px] sticky top-0 z-20 bg-white items-center py-4 ${navshadow} transition-all`}>
       <div className="right flex items-center gap-0 sm:gap-10">
         <div className="menu sm:hidden">
-        {/* <p onClick={() => setOpen(!open)} className='ml-5 text-2xl'>< IoMdMenu/></p> */}
+        <p onClick={() => setOpen(!open)} className='ml-5 text-2xl'>< IoMdMenu/></p>
         <Drawer open={open} onClose={toggleDrawer(false)}>
           {DrawerList}
         </Drawer>
