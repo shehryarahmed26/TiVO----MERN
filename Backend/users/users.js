@@ -3,7 +3,6 @@ import { usermodel } from "../DB/usersmodel.js";
 export const userrouter = express.Router()
 userrouter.get('/', async (req, res) => {
     const getusers = await usermodel.find()
-    // console.log(getblogs);
     res.json({status: 200, users: getusers})
 })
 userrouter.post('/', async (req, res) => {
